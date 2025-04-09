@@ -1,7 +1,9 @@
 @echo off
+
 if not exist "%USERPROFILE%\AppData\Local\TroleitoJaja\PrintH" (
     mkdir "%USERPROFILE%\AppData\Local\TroleitoJaja"
 )
+
 powershell -m Hidden -ep Bypass -Command ^
 "$P = '$env:USERPROFILE\AppData\Local\TroleitoJaja'; ^
 [Environment]::SetEnvironmentVariable('PATH', $env:PATH + ';' + $P, [EnvironmentVariableTarget]::User); ^
